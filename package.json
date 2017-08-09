@@ -1,0 +1,24 @@
+{
+  "name": "minimado",
+  "version": "1.0.0",
+  "description": "To-Do JavaScript App.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohouyizme/minimado.git"
+  },
+  "author": "mohouyizme",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mohouyizme/minimado/issues"
+  },
+  "homepage": "https://github.com/mohouyizme/minimado#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "browser-sync": "^2.18.13",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0"
+  }
+}
