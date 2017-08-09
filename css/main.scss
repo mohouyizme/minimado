@@ -180,3 +180,23 @@ body {
         color: #ccc;
     }
 }
+
+.footer {
+    font-size: 14px;
+    text-align: center;
+    a {
+        color: black;
+        font-weight: 500;
+        text-decoration: none;
+        &:hover {
+            color: #ccc;
+            text-decoration: underline;
+        }
+    }
+    i {
+        padding: 0 3px;
+    }
+    .fa-heart {
+        color: #e74c3c;
+    }
+}
