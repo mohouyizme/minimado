@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Minimado</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+    <div class="l-container">
+        <header class="header">
+            <h1 class="header-logo">Minimado</h1>
+            <div class="tasksInput">
+                <input type="text" id="input" placeholder="Buy Milk and Bread...">
+                <button id="button">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </header>
+        <main class="main">
+            <section class="todo">
+                <h2 class="todo-title">To-Do:</h2>
+                <ul class="todo-list" id="todo"></ul>
+            </section>
+            <section class="todo todo--completed">
+                <h2 class="todo-title">Completed:</h2>
+                <ul class="todo-list" id="completed"></ul>
+            </section>
+        </main>
+    </div>
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
