@@ -8,8 +8,14 @@ input.addEventListener("keyup", function (e) {
 });
 
 button.addEventListener("click", function () {
-    if (input.value) {
-        var inputVaule = document.createTextNode(input.value);
+    var spacesCount = 0;
+    for (var i = 0; i < input.value.length; i++) {
+        if (input.value[i] === " ") {
+            spacesCount++;
+        };
+    }
+    if (input.value && spacesCount !== input.value.length) {
+        var inputValue = document.createTextNode(input.value);
         var todoItem = document.createElement("li");
         var todoButtons = document.createElement("div");
         var deleteButton = document.createElement("button");
@@ -30,7 +36,7 @@ button.addEventListener("click", function () {
         doneButton.appendChild(checkIcon);
         todoButtons.appendChild(deleteButton);
         todoButtons.appendChild(doneButton);
-        todoItem.appendChild(inputVaule);
+        todoItem.appendChild(inputValue);
         todoItem.appendChild(todoButtons);
         todo.prepend(todoItem);
 

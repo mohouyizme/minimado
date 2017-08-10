@@ -37,6 +37,6 @@ gulp.task("js", function() {
             suffix: ".min"
         }))
         .pipe(gulp.dest("js"));
-})
+});
 
 gulp.task("default", ["serve"]);
