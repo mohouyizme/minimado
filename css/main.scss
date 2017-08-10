@@ -107,7 +107,6 @@ body {
 .todo-list {
     margin: 0;
     padding: 0;
-    min-height: 50px;
     list-style: none;
     background: white;
     border: 2px solid #ccc;
@@ -115,6 +114,10 @@ body {
     position: relative;
     font-weight: 500;
     font-size: 14px;
+}
+
+.todo-list:empty {
+    min-height: 50px;
 }
 
 .todo-list:empty::before {
@@ -127,7 +130,7 @@ body {
 }
 
 .todo-item {
-    padding: 18px 95px 18px 15px;
+    padding: 12.5px 95px 12.5px 15px;
     border-bottom: 2px solid #ccc;
     position: relative;
     &:last-of-type {
@@ -184,6 +187,10 @@ body {
 .footer {
     font-size: 14px;
     text-align: center;
+    margin-bottom: 30px;
+    p {
+        margin: 0;
+    }
     a {
         color: black;
         font-weight: 500;
