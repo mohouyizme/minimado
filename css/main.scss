@@ -183,7 +183,11 @@ body {
     p {
         margin: 0;
     }
+    i {
+        padding: 0 3px;
+    }
     a {
+        margin-left: 3px;
         color: black;
         font-weight: 500;
         text-decoration: none;
@@ -191,9 +195,9 @@ body {
             color: #ccc;
             text-decoration: underline;
         }
-    }
-    i {
-        padding: 0 3px;
+        i {
+            padding-left: 0;
+        }
     }
     .fa-heart {
         color: #e74c3c;
