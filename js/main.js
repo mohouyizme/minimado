@@ -53,7 +53,7 @@ button.addEventListener("click", function () {
             var todoEdit = document.createElement("input");
             todoEdit.type = "text";
             todoEdit.classList.add("todo-edit");
-            todoEdit.value = inputValue.textContent;
+            todoEdit.value = item.childNodes[0].textContent;
             inputValueWrapper.style.display = "none";
             item.prepend(todoEdit);
             todoEdit.focus();
