@@ -75,8 +75,7 @@ body {
     outline: none;
     cursor: pointer;
     transition: transform 300ms ease-in-out;
-    &:hover,
-    &:focus {
+    &:hover {
         transform: scale(1.1);
     }
 }
@@ -131,11 +130,29 @@ body {
 }
 
 .todo-item {
-    padding: 12.5px 95px 12.5px 15px;
+    padding: 12.5px 135px 12.5px 15px;
     border-bottom: 2px solid #ccc;
     position: relative;
     &:last-of-type {
         border: none;
+    }
+}
+
+.todo-edit {
+    width: 100%;
+    border: 2px solid #ccc;
+    height: 30px;
+    border-radius: 15px;
+    text-indent: 15px;
+    font-size: 12px;
+    outline: none;
+    padding-right: 30px;
+    position: relative;
+    &::before {
+        content: "press enter to save";
+        position: absolute;
+        color: red;
+        right: 0;
     }
 }
 
@@ -158,9 +175,14 @@ body {
     outline: none;
 }
 
+.button--edit {
+    &:hover {
+        color: #27ae60;
+    }
+}
+
 .button--delete {
-    &:hover,
-    &:focus {
+    &:hover {
         color: #e74c3c;
     }
 }

@@ -15,9 +15,12 @@ button.addEventListener("click", function () {
         };
     }
     if (input.value && spacesCount !== input.value.length) {
+        var inputValueWrapper = document.createElement("span");
         var inputValue = document.createTextNode(input.value);
         var todoItem = document.createElement("li");
         var todoButtons = document.createElement("div");
+        var editButton = document.createElement("button");
+        var pencilIcon = document.createElement("i");
         var deleteButton = document.createElement("button");
         var trashIcon = document.createElement("i");
         var doneButton = document.createElement("button");
@@ -25,22 +28,50 @@ button.addEventListener("click", function () {
 
         todoItem.classList.add("todo-item");
         todoButtons.classList.add("todo-buttons");
+        editButton.classList.add("button", "button--edit");
+        pencilIcon.classList.add("fa", "fa-pencil");
         deleteButton.classList.add("button", "button--delete");
-        deleteButton.id = "delete";
         trashIcon.classList.add("fa", "fa-trash");
         doneButton.classList.add("button", "button--done");
-        doneButton.id = "done";
         checkIcon.classList.add("fa", "fa-check");
 
+        editButton.appendChild(pencilIcon);
         deleteButton.appendChild(trashIcon);
         doneButton.appendChild(checkIcon);
+        todoButtons.appendChild(editButton);
         todoButtons.appendChild(deleteButton);
         todoButtons.appendChild(doneButton);
-        todoItem.appendChild(inputValue);
+        inputValueWrapper.appendChild(inputValue);
+        todoItem.appendChild(inputValueWrapper);
         todoItem.appendChild(todoButtons);
         todo.prepend(todoItem);
 
         input.value = "";
+
+        editButton.addEventListener("click", function () {
+            var item = this.parentNode.parentNode;
+            var todoEdit = document.createElement("input");
+            todoEdit.type = "text";
+            todoEdit.classList.add("todo-edit");
+            todoEdit.value = inputValue.textContent;
+            inputValueWrapper.style.display = "none";
+            item.prepend(todoEdit);
+            todoEdit.focus();
+            todoButtons.removeChild(editButton);
+            item.style.paddingRight = "95px";
+            function todoEditDone() {
+                inputValueWrapper.textContent = todoEdit.value;
+                inputValueWrapper.style.display = "block";
+                item.removeChild(todoEdit);
+                todoButtons.prepend(editButton);
+                item.style.paddingRight = "135px";
+            }
+            todoEdit.addEventListener("keyup", function (e) {
+                if (e.keyCode === 13) {
+                    todoEditDone();
+                }
+            });
+        });
 
         deleteButton.addEventListener("click", function () {
             var item = this.parentNode.parentNode;
