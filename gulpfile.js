@@ -13,7 +13,7 @@ gulp.task("serve", ["css", "js"], function() {
     });
     gulp.watch("css/main.scss", ["css"]);
     gulp.watch("index.html").on("change", browserSync.reload);
-    gulp.watch("js/main.js", ["js"]).on ("change", browserSync.reload);    
+    gulp.watch("js/main.min.js", ["js"]).on ("change", browserSync.reload);    
 });
 
 gulp.task("css", function() {
