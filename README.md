@@ -1,2 +1,2 @@
 # minimado
-To-Do JavaScript App.
+JavaScript To-Do App.
