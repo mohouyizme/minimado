@@ -1,2 +1,14 @@
 # minimado
-To-Do JavaScript App.
+Vanilla JavaScript To-Do App.
+
+---
+
+### Run:
+```
+$ npm install
+```
+
+### Then:
+```
+$ gulp
+```
