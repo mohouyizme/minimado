@@ -50,22 +50,32 @@ button.addEventListener("click", function () {
 
         editButton.addEventListener("click", function () {
             var item = this.parentNode.parentNode;
+            var todoEditWrapper = document.createElement("div");
             var todoEdit = document.createElement("input");
+            var todoEditUpdateButton = document.createElement("button");
+            var todoEditPlusIcon = document.createElement("i");            
+            todoEditWrapper.classList.add("todo-editWrapper");
+            todoEditUpdateButton.classList.add("button", "button--update");
+            todoEditPlusIcon.classList.add("fa", "fa-plus");
             todoEdit.type = "text";
             todoEdit.classList.add("todo-edit");
             todoEdit.value = item.childNodes[0].textContent;
+            todoEditUpdateButton.appendChild(todoEditPlusIcon);
+            todoEditWrapper.appendChild(todoEdit);
+            todoEditWrapper.appendChild(todoEditUpdateButton);
             inputValueWrapper.style.display = "none";
-            item.prepend(todoEdit);
+            item.prepend(todoEditWrapper);
             todoEdit.focus();
             todoButtons.removeChild(editButton);
             item.style.paddingRight = "95px";
             function todoEditDone() {
                 inputValueWrapper.textContent = todoEdit.value;
-                inputValueWrapper.style.display = "block";
-                item.removeChild(todoEdit);
+                inputValueWrapper.removeAttribute("style");
+                item.removeChild(todoEditWrapper);
                 todoButtons.prepend(editButton);
                 item.style.paddingRight = "135px";
             }
+            todoEditUpdateButton.addEventListener("click", todoEditDone);
             todoEdit.addEventListener("keyup", function (e) {
                 if (e.keyCode === 13) {
                     todoEditDone();
