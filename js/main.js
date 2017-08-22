@@ -53,7 +53,7 @@ button.addEventListener("click", function () {
             var todoEditWrapper = document.createElement("div");
             var todoEdit = document.createElement("input");
             var todoEditUpdateButton = document.createElement("button");
-            var todoEditPlusIcon = document.createElement("i");            
+            var todoEditPlusIcon = document.createElement("i");
             todoEditWrapper.classList.add("todo-editWrapper");
             todoEditUpdateButton.classList.add("button", "button--update");
             todoEditPlusIcon.classList.add("fa", "fa-plus");
@@ -68,6 +68,7 @@ button.addEventListener("click", function () {
             todoEdit.focus();
             todoButtons.removeChild(editButton);
             item.style.paddingRight = "95px";
+
             function todoEditDone() {
                 inputValueWrapper.textContent = todoEdit.value;
                 inputValueWrapper.removeAttribute("style");
