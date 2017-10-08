@@ -8,15 +8,9 @@ input.addEventListener("keyup", function (e) {
 });
 
 button.addEventListener("click", function () {
-    var spacesCount = 0;
-    for (var i = 0; i < input.value.length; i++) {
-        if (input.value[i] === " ") {
-            spacesCount++;
-        };
-    }
-    if (input.value && spacesCount !== input.value.length) {
+    if (input.value.trim()) {
         var inputValueWrapper = document.createElement("span");
-        var inputValue = document.createTextNode(input.value);
+        var inputValue = document.createTextNode(input.value.trim());
         var todoItem = document.createElement("li");
         var todoButtons = document.createElement("div");
         var editButton = document.createElement("button");
@@ -70,11 +64,13 @@ button.addEventListener("click", function () {
             item.style.paddingRight = "95px";
 
             function todoEditDone() {
-                inputValueWrapper.textContent = todoEdit.value;
-                inputValueWrapper.removeAttribute("style");
-                item.removeChild(todoEditWrapper);
-                todoButtons.prepend(editButton);
-                item.style.paddingRight = "135px";
+                if (todoEdit.value.trim()) {
+                    inputValueWrapper.textContent = todoEdit.value.trim();
+                    inputValueWrapper.removeAttribute("style");
+                    item.removeChild(todoEditWrapper);
+                    todoButtons.prepend(editButton);
+                    item.style.paddingRight = "135px";
+                }
             }
             todoEditUpdateButton.addEventListener("click", todoEditDone);
             todoEdit.addEventListener("keyup", function (e) {
