@@ -1,24 +1,24 @@
-var input = document.getElementById("input");
-var button = document.getElementById("button");
-var todo = document.getElementById("todo");
-var completed = document.getElementById("completed");
+const input = document.getElementById("input");
+const button = document.getElementById("button");
+const todo = document.getElementById("todo");
+const completed = document.getElementById("completed");
 
-input.addEventListener("keyup", function (e) {
+input.addEventListener("keyup", e => {
     if (e.keyCode === 13) button.click();
 });
 
-button.addEventListener("click", function () {
+button.addEventListener("click", () => {
     if (input.value.trim()) {
-        var inputValueWrapper = document.createElement("span");
-        var inputValue = document.createTextNode(input.value.trim());
-        var todoItem = document.createElement("li");
-        var todoButtons = document.createElement("div");
-        var editButton = document.createElement("button");
-        var pencilIcon = document.createElement("i");
-        var deleteButton = document.createElement("button");
-        var trashIcon = document.createElement("i");
-        var doneButton = document.createElement("button");
-        var checkIcon = document.createElement("i");
+        const inputValueWrapper = document.createElement("span");
+        const inputValue = document.createTextNode(input.value.trim());
+        const todoItem = document.createElement("li");
+        const todoButtons = document.createElement("div");
+        const editButton = document.createElement("button");
+        const pencilIcon = document.createElement("i");
+        const deleteButton = document.createElement("button");
+        const trashIcon = document.createElement("i");
+        const doneButton = document.createElement("button");
+        const checkIcon = document.createElement("i");
 
         todoItem.classList.add("todo-item");
         todoButtons.classList.add("todo-buttons");
@@ -43,11 +43,11 @@ button.addEventListener("click", function () {
         input.value = "";
 
         editButton.addEventListener("click", function () {
-            var item = this.parentNode.parentNode;
-            var todoEditWrapper = document.createElement("div");
-            var todoEdit = document.createElement("input");
-            var todoEditUpdateButton = document.createElement("button");
-            var todoEditPlusIcon = document.createElement("i");
+            const item = this.parentNode.parentNode;
+            const todoEditWrapper = document.createElement("div");
+            const todoEdit = document.createElement("input");
+            const todoEditUpdateButton = document.createElement("button");
+            const todoEditPlusIcon = document.createElement("i");
             todoEditWrapper.classList.add("todo-editWrapper");
             todoEditUpdateButton.classList.add("button", "button--update");
             todoEditPlusIcon.classList.add("fa", "fa-plus");
@@ -63,7 +63,7 @@ button.addEventListener("click", function () {
             todoButtons.removeChild(editButton);
             item.style.paddingRight = "95px";
 
-            function todoEditDone() {
+            const todoEditDone = () => {
                 if (todoEdit.value.trim()) {
                     inputValueWrapper.textContent = todoEdit.value.trim();
                     inputValueWrapper.removeAttribute("style");
@@ -73,21 +73,20 @@ button.addEventListener("click", function () {
                 }
             }
             todoEditUpdateButton.addEventListener("click", todoEditDone);
-            todoEdit.addEventListener("keyup", function (e) {
-                if (e.keyCode === 13) {
+            todoEdit.addEventListener("keyup", (e) => {
+                if (e.keyCode === 13)
                     todoEditDone();
-                }
             });
         });
 
         deleteButton.addEventListener("click", function () {
-            var item = this.parentNode.parentNode;
-            var parent = item.parentNode;
+            const item = this.parentNode.parentNode;
+            const parent = item.parentNode;
             parent.removeChild(item);
         });
 
         doneButton.addEventListener("click", function () {
-            var parentId = this.parentNode.parentNode.parentNode.id;
+            const parentId = this.parentNode.parentNode.parentNode.id;
             parentId === "todo" ? completed.prepend(todoItem) : todo.appendChild(todoItem);
         });
     }
