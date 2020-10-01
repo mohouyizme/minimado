@@ -1,48 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Minimado</title>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
+      rel="stylesheet"
+    />
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/main.min.css">
-</head>
+    <link rel="stylesheet" href="css/main.min.css" />
+  </head>
 
-<body>
+  <body>
     <div class="l-container">
-        <header class="header">
-            <h1 class="header-logo">Minimado</h1>
-            <div class="tasksInput">
-                <input type="text" id="input" placeholder="Buy Milk and Bread...">
-                <button id="button">
-                    <i class="fa fa-plus"></i>
-                </button>
-            </div>
-        </header>
-        <main class="main">
-            <section class="todo">
-                <h2 class="todo-title">To-Do:</h2>
-                <ul class="todo-list" id="todo"></ul>
-            </section>
-            <section class="todo todo--completed">
-                <h2 class="todo-title">Completed:</h2>
-                <ul class="todo-list" id="completed"></ul>
-            </section>
-        </main>
-        <footer class="footer">
-            <p>Built with <i class="fa fa-heart"></i> by <a href="https://github.com/mohouyizme"><i class="fa fa-github"></i>mohouyizme</a></p>
-            <a class="github-button" href="https://github.com/mohouyizme/minimado/fork" data-icon="octicon-repo-forked" aria-label="Fork mohouyizme/minimado on GitHub">Fork</a>
-            <a class="github-button" href="https://github.com/mohouyizme/minimado" data-icon="octicon-star" aria-label="Star mohouyizme/minimado on GitHub">Star</a>
-        </footer>
+      <header class="header">
+        <h1 class="header-logo">Minimado</h1>
+        <div class="tasksInput">
+          <input type="text" id="input" placeholder="Buy Milk and Bread..." />
+          <button id="button">
+            <i class="fa fa-plus"></i>
+          </button>
+        </div>
+      </header>
+      <main class="main">
+        <section class="todo">
+          <h2 class="todo-title">To-Do:</h2>
+          <ul class="todo-list" id="todo"></ul>
+        </section>
+        <section class="todo todo--completed">
+          <h2 class="todo-title">Completed:</h2>
+          <ul class="todo-list" id="completed"></ul>
+        </section>
+      </main>
+      <footer class="footer">
+        <p>
+          Built with <i class="fa fa-heart"></i> by
+          <a href="https://github.com/mohouyizme"
+            ><i class="fa fa-github"></i>mohouyizme</a
+          >
+        </p>
+        <a
+          class="github-button"
+          href="https://github.com/mohouyizme/minimado/fork"
+          data-icon="octicon-repo-forked"
+          data-show-count="true"
+          aria-label="Fork mohouyizme/minimado on GitHub"
+          >Fork</a
+        >
+        <a
+          class="github-button"
+          href="https://github.com/mohouyizme/minimado"
+          data-icon="octicon-star"
+          data-show-count="true"
+          aria-label="Star mohouyizme/minimado on GitHub"
+          >Star</a
+        >
+      </footer>
     </div>
     <!-- Scripts -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="js/main.min.js"></script>
-</body>
-
+  </body>
 </html>
