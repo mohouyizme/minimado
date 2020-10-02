@@ -8,6 +8,9 @@
   },
   "author": "mohouyizme",
   "license": "MIT",
+  "scripts": {
+    "start": "gulp"
+  },
   "bugs": {
     "url": "https://github.com/mohouyizme/minimado/issues"
   },
